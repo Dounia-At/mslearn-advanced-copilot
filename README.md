@@ -6,10 +6,30 @@ Gain more practical experience by using this repository that contains a Python W
 
 [![Powered by Awesome Copilot](https://img.shields.io/badge/Powered_by-Awesome_Copilot-blue?logo=githubcopilot)](https://aka.ms/awesome-github-copilot)
 
-## Requirements
+## Run the project
 
-1. Enable your [GitHub Copilot service](https://github.com/github-copilot/signup)
-1. Open [this repository with Codespaces](https://codespaces.new/MicrosoftDocs/mslearn-copilot-codespaces-python)
+You need Python 3.10 or later. From the repository root, create and activate a virtual environment, install the dependencies, and start the API:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m uvicorn main:app --reload
+```
+
+On Windows, activate the virtual environment with `.venv\\Scripts\\activate` in Command Prompt or `.venv\\Scripts\\Activate.ps1` in PowerShell.
+
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000) to be redirected to the interactive API documentation. You can also open [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) directly. Stop the server with `Ctrl+C`.
+
+To run the tests, open another terminal, activate the virtual environment, and run:
+
+```bash
+python -m pytest
+```
+
+## Requirements for the Copilot exercise
+
+Enable your [GitHub Copilot service](https://github.com/github-copilot/signup) and, if you want a preconfigured development environment, open [this repository with Codespaces](https://codespaces.new/MicrosoftDocs/mslearn-copilot-codespaces-python).
 
 ## 💪🏽 Exercise
 The current API is not exposing country/{country} which needs to be implemented to list cities. The route should allow only GET HTTP requests with a JSON response providing information from the historical high and low for that country, city, and given month.
